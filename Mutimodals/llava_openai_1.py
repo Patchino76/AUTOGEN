@@ -6,7 +6,8 @@ import requests
 import time
 # %%
 # client = OpenAI(base_url="http://localhost:4321/v1/", api_key="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")
-client = OpenAI(base_url="http://localhost:8000", api_key="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")
+# client = OpenAI(base_url="http://localhost:8000", api_key="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")
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="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")
 
 # %%
 image_path = 'img/stop.jpg'

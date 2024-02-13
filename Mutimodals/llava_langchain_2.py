@@ -7,7 +7,9 @@ from langchain.schema import AIMessage, HumanMessage, SystemMessage
 import requests
 import json
 # %%
-url = "http://localhost:4321/v1/"
+# url = "http://localhost:4321/v1"
+url = "http://localhost:8000"
+# url = "http://localhost:11434/v1"
 
 client = ChatOpenAI(base_url=url, api_key="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")
 # embedding = OpenAIEmbeddings()

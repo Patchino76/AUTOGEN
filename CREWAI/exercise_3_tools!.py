@@ -12,7 +12,7 @@ url = "http://localhost:8000"  # litellm
 llm = ChatOpenAI(
     base_url=url, api_key="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"
 )
-human_tools = load_tools(["human, python_repl"])
+human_tools = load_tools(["human, python_repl"], llm)
 # %%
 Script_writer = Agent(
     role="Python script writer",

@@ -3,24 +3,12 @@ import langchain
 import base64
 from langchain_openai import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-# from langchain.chat_models import ChatOpenAI
-import requests
-import json
-# %%
-# url = "http://localhost:4321/v1"
-# url = "http://localhost:8000"
-# url = "http://localhost:11434/v1"
-from llamaapi import LlamaAPI
-from langchain_experimental.llms import ChatLlamaAPI
 
-llama_api = "LL-98gYyvWUwXgLUAk3b0lImDBm9kgKniVb2YjFR2RrnYqxD5eQcBeWLdxxcCp5TvHN"
-llama = LlamaAPI(llama_api)
-# client = ChatOpenAI(base_url=url, api_key="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")
-client = ChatLlamaAPI(client=llama)
 # %%
-image_path = 'img/agents.png'
-image_path = 'img/stop.jpg'
-image_path = 'img/kiss.jpeg'
+
+from langchain_community.chat_models import ChatOllama
+client = ChatOllama(model="llava:34b-v1.6")
+# %%
 image_path = 'img/table_small.jpg'
 
 def encode_image(image_path):
@@ -44,4 +32,4 @@ msg = client.invoke(
 )
 # %%
 print(msg)
-# %%
+ %%

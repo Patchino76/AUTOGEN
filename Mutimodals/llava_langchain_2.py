@@ -8,11 +8,15 @@ import requests
 import json
 # %%
 # url = "http://localhost:4321/v1"
-url = "http://localhost:8000"
+# url = "http://localhost:8000"
 # url = "http://localhost:11434/v1"
+from llamaapi import LlamaAPI
+from langchain_experimental.llms import ChatLlamaAPI
 
-client = ChatOpenAI(base_url=url, api_key="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")
-# embedding = OpenAIEmbeddings()
+llama_api = "LL-98gYyvWUwXgLUAk3b0lImDBm9kgKniVb2YjFR2RrnYqxD5eQcBeWLdxxcCp5TvHN"
+llama = LlamaAPI(llama_api)
+# client = ChatOpenAI(base_url=url, api_key="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")
+client = ChatLlamaAPI(client=llama)
 # %%
 image_path = 'img/agents.png'
 image_path = 'img/stop.jpg'
